@@ -31,4 +31,5 @@ for x,y in enumerate(words_sorted):
     if y == interested_sorted:
         pos.append(x)
 
-print(pos)
+for x in pos:
+    print(words[x])

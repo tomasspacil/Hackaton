@@ -48,3 +48,30 @@ else:
 
 #--------------------origin---------------------
 '''
+reversed_card_number = card_number[::-1]
+
+odd_digits = reversed_card_number[::2]
+even_digits = reversed_card_number[1::2]
+
+total = 0
+for o in odd_digits:# add up all odd digits
+    total += int(o)
+
+for e in even_digits: # for every even digit
+    multiplied = int(e)*2
+
+    if multiplied > 9:
+        total += (multiplied-9)
+    else:
+        total += multiplied
+
+# Now that we have the sum, we can create a checksum
+checksum = total
+
+print(card_number)
+if not checksum % 10: # If the remainder of the total is 0 (total is divisible by 10)
+    print('Valid!')
+
+else:
+    print('Your credit card number is not valid. Please check for any typos.')
+# -*- coding: utf-8 -*-
